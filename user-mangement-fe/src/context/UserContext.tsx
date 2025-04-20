@@ -55,7 +55,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   // Fetch users from the API
   const fetchUsers = async () => {
     try {
-      const response = await get<User[]>("/users");
+      const response = await get<User[]>("/users/");
       setUsers(response);
     } catch (error) {
       console.error("Error fetching users:", error);

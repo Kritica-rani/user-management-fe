@@ -1,5 +1,4 @@
 import type React from "react";
-import { useState } from "react";
 import {
   Table,
   TableBody,
@@ -14,13 +13,6 @@ import {
 } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import { useUsers } from "../context/UserContext";
-
-interface Person {
-  id: number;
-  name: string;
-  email: string;
-  age: number;
-}
 
 const UserTable: React.FC = () => {
   const { users, deleteUserInfo } = useUsers();

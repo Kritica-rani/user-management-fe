@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Button, Stack } from "@mui/material";
 import { User } from "../types/types";
 import CustomModal from "../components/custom-modal/CustomModal";

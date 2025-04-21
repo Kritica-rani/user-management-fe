@@ -11,7 +11,6 @@ import { User } from "../types/types";
 import { getUserValidationRules } from "../helper/UserFormValidation";
 import { FormProvider, useForm } from "react-hook-form";
 import { del, get, post } from "../services/api";
-import { number } from "yup";
 
 const defaultValues = {
   name: "",
@@ -65,7 +64,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   // Create a new user
   const createUser = async (userData: User) => {
     try {
-      const usersData = await post<User[]>("/users/", userData);
+      await post<User[]>("/users/", userData);
       fetchUsers();
       toast.success("User added!");
     } catch (error: any) {
@@ -83,7 +82,7 @@ export const UserProvider: React.FC<UserProviderProps> = ({ children }) => {
   const deleteUserInfo = async (userId: number) => {
     try {
       if (userId) {
-        const deletedUser = await del(`/users/${userId}`);
+        await del(`/users/${userId}`);
         fetchUsers();
         // Show success toast
         toast.success("User deleted successfully");
